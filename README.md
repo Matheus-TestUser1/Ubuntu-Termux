@@ -2,6 +2,6 @@
 
 ## Installation
 ### In Termux:
-1) Install tar and git:
+1) Install Ubuntu On Termux!:
 ```
 pkg update -y && pkg upgrade -y git clone 
