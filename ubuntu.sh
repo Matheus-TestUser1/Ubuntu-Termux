@@ -135,3 +135,10 @@ printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;203m[ERROR]:\e[0m \x1b[38;5;87m 
 printf "\e[0m"
 fi
 ./startubuntu.sh 
+
+apt update -y
+ apt upgrade -y
+ apt install udisks2 -y
+ echo "" > /var/lib/dpkg/info/udisks2.postinst 
+dpkg --configure -a 
+ apt-mark hold udisks2
