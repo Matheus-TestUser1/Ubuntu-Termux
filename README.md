@@ -8,6 +8,4 @@ termux-setup-storage && pkg update -y && pkg upgrade -y && pkg install git wget 
 `
 https://github.com/MFDGaming/ubuntu-in-termux
 
-### Installation steps
 
-1. Update termux: `
