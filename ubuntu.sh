@@ -47,7 +47,7 @@ printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m
 proot --link2symlink tar -zxf $cur/ubuntu.tar.gz --exclude='dev'||:
 printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m The ubuntu rootfs have been successfully decompressed!\n"
 printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m Fixing the resolv.conf, so that you have access to the internet\n"
-printf "nameserver 1.1.1.1\n nameserver 1.0.0.1\n" > etc/resolv.conf
+printf "nameserver 1.1.1.1\nnameserver 1.0.0.1\n" > etc/resolv.conf
 stubs=()
 stubs+=('usr/bin/groups')
 for f in ${stubs[@]};do
@@ -85,7 +85,7 @@ command+=" -b ubuntu-fs/tmp:/dev/shm"
 command+=" -b /data/data/com.termux"
 command+=" -b /:/host-rootfs"
 command+=" -b /sdcard/"
-command+=" -b /storage"
+command+=" -b /storage/emulated/0/"
 command+=" -b /mnt"
 command+=" -w /root"
 command+=" /usr/bin/env -i"
@@ -134,11 +134,4 @@ else
 printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;203m[ERROR]:\e[0m \x1b[38;5;87m Installation aborted.\n"
 printf "\e[0m"
 fi
-./startubuntu.sh 
-
-apt update -y
- apt upgrade -y
- apt install udisks2 -y
- echo "" > /var/lib/dpkg/info/udisks2.postinst 
-dpkg --configure -a 
- apt-mark hold udisks2
+ 
