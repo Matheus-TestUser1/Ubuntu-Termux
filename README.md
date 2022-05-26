@@ -10,6 +10,7 @@ termux-setup-storage && pkg update -y && pkg upgrade -y && pkg install git wget 
 `
  apt update -y && apt install wget -y && wget https://raw.githubusercontent.com/Matheus-TestUser1/Ubuntu-Termux/main/fix.sh && bash fix.sh
 `
+##Credits!
 https://github.com/MFDGaming/ubuntu-in-termux
 
 
