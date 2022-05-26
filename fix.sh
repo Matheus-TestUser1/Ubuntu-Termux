@@ -5,3 +5,5 @@ echo "" > /var/lib/dpkg/info/udisks2.postinst
 dpkg --configure -a
 apt-mark hold udisks2
 clear
+echo "fix error sucess!"
+rm fix.sh
